@@ -1,0 +1,47 @@
+{
+  "name": "@fastpanel/apollo",
+  "version": "0.0.1",
+  "description": "Extension to work with the \"Apollo\" server.",
+  "author": "Desionlab <fenixphp@gmail.com>",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "./node_modules/.bin/tsc",
+    "develop": "./node_modules/.bin/tsc --watch",
+    "docs": "./node_modules/.bin/typedoc --theme minimal --target 'esnext' --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs/ ./src/",
+    "test": "./node_modules/.bin/mocha --require ts-node/register test/**/*.spec.ts",
+    "build": "npm run test && npm run compile && npm run docs",
+    "prepare": "npm run test && npm run compile && npm run docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastpanel/apollo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fastpanel/apollo/issues"
+  },
+  "homepage": "https://github.com/fastpanel/apollo#readme",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "apollo"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@fastpanel/core": "github:fastpanel/core#develop",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "@types/vorpal": "^1.11.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.14.0",
+    "typescript": "^3.2.2"
+  },
+  "license": "MIT"
+}
