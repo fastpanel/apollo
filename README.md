@@ -3,6 +3,14 @@ Extension to work with the "Apollo" server.
 
 ---
 
+## Env
+
+``` dotenv
+
+```
+
+---
+
 ## License
 The MIT License (MIT)
 
