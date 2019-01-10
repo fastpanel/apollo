@@ -6,7 +6,7 @@
  * @license   MIT
  */
 
-import Vorpal from 'vorpal';
+import Caporal from 'caporal';
 import { Extensions } from '@fastpanel/core';
 
 /**
@@ -21,7 +21,13 @@ export class Extension extends Extensions.ExtensionDefines {
   /**
    * Registers a service provider.
    */
-  async register () : Promise<any> {}
+  async register () : Promise<any> {
+    /* Registered cli commands. */
+    this.events.once('cli:getCommands', async (cli: Caporal) => {
+      const { Setup } = require('./Commands/Setup');
+      await (new Setup(this.di)).initialize();
+    });
+  }
   
   /**
    * Startup a service provider.
