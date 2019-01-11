@@ -21,9 +21,9 @@ class Extension extends core_1.Extensions.ExtensionDefines {
      */
     async register() {
         /* Registered cli commands. */
-        this.events.once('cli:getCommands', async (cli) => {
+        this.events.once('cli:getCommands', (cli) => {
             const { Setup } = require('./Commands/Setup');
-            await (new Setup(this.di)).initialize();
+            (new Setup(this.di)).initialize();
         });
     }
     /**
