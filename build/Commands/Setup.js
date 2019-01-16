@@ -7,6 +7,7 @@
  * @license   MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const os_1 = require("os");
 const core_1 = require("@fastpanel/core");
 /**
  * Class Setup
@@ -22,13 +23,18 @@ class Setup extends core_1.Cli.CommandDefines {
             .command('fastpanel/apollo setup', 'Configure apollo components.')
             .option('-e, --env', 'Save as current environment settings.')
             .option('-f, --force', 'Forced command running.')
-            .option('-y, --yes', 'Assume yes if prompted.')
             .visible(false)
             .action((args, options, logger) => {
             return new Promise(async (resolve, reject) => {
-                logger.debug('@fastpanel/apollo setup');
-                logger.debug(args);
-                logger.debug(options);
+                /* Info message. */
+                logger.info(`${os_1.EOL}Configure apollo components.`);
+                if (!this.config.get('Ext/Apollo', false) || options.force) {
+                }
+                else {
+                    /* Info message. */
+                    logger.info(` Everything is already configured. ${os_1.EOL}`);
+                }
+                /* Command complete. */
                 resolve();
             });
         });
