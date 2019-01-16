@@ -22,7 +22,7 @@ class Setup extends core_1.Cli.CommandDefines {
         this.cli
             .command('fastpanel/apollo setup', 'Configure apollo components.')
             .option('-e, --env', 'Save as current environment settings.')
-            .option('-f, --force', 'Forced command running.')
+            .option('-f, --force', 'Forced reconfiguration of components.')
             .visible(false)
             .action((args, options, logger) => {
             return new Promise(async (resolve, reject) => {
